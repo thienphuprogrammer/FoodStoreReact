@@ -1,0 +1,137 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0.5rem 1.5rem 1.5rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    flex: 3 0;
+    justify-content: space-evenly;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    list-style-type: none;
+    margin: 0.5rem;
+}
+
+.list li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.list li:last-child {
+    border-bottom: none;
+}
+.list li img {
+    width: 5rem;
+    height: 5rem;
+    margin: 0.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.list li div {
+    padding: 1rem;
+}
+
+.list li div:not(:first-child) {
+    flex-basis: 18%;
+}
+
+.list li select {
+    width: 4rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.list .remove_button {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #e72929;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.7;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.list .remove_button:hover {
+    opacity: 1;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 3;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.checkout > div {
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.checkout .foods_count {
+    margin-bottom: 1.5rem;
+}
+.checkout .foods_count:before {
+    content: "Total Foods: ";
+    font-weight: 100;
+    color: grey;
+}
+
+.checkout .total_price {
+    margin-bottom: 1.5rem;
+}
+
+.checkout .total_price:before {
+    content: "Price: ";
+    font-weight: 100;
+    color: grey;
+}
+
+.checkout a {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: #e72929;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.7;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+.checkout a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
