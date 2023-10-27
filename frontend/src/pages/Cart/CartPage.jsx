@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import Price from "../../components/Price/Price.jsx";
 
 export const CartPage = () => {
-    const {cart} = useCart();
+    const {cart, removeFromCart, changeQuantity } = useCart();
 
     return (
         <>
@@ -33,7 +33,7 @@ export const CartPage = () => {
                                         <select
                                             value={item.quantity}
                                             className={classes.select}
-                                            onChange={e => console.log(e.target.value)}
+                                            onChange={e => changeQuantity(item, Number(e.target.value))}
                                         >
                                             <option value={1}>1</option>
                                             <option value={2}>2</option>
@@ -53,7 +53,10 @@ export const CartPage = () => {
                                     </div>
 
                                     <div>
-                                        <button className={classes.remove_button}>Remove</button>
+                                        <button
+                                            className={classes.remove_button}
+                                            onClick={() => removeFromCart(item.food.id)}
+                                        >Remove</button>
                                     </div>
                                 </li>
                             ))

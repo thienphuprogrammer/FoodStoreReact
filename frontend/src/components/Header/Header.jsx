@@ -1,15 +1,14 @@
 import React from "react";
 import classes from "./header.module.css";
 import { Link } from "react-router-dom";
+import {useCart} from "../../hooks/useCart.jsx";
 
 const Header = () => {
     const user = {
         name: "John"
     };
 
-    const cart = {
-        totalCost: 35
-    };
+    const { cart } = useCart();
 
     return (
         <header className={classes.header}>
@@ -33,7 +32,7 @@ const Header = () => {
                         }
                         <li className={classes.menu_container}>
                             <Link to="/cart">
-                                Cart {cart.totalCost > 0 && <span className={classes.cart_count}>{cart.totalCost}</span>}
+                                Cart {cart.totalCount > 0 && <span className={classes.cart_count}>{cart.totalCount}</span>}
                             </Link>
                         </li>
                     </ul>

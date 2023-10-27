@@ -1,19 +1,27 @@
 import React, {useEffect, useState} from "react";
 import classes from "./foodPage.module.css";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {getById} from "../../services/foodService.jsx";
 import StarRating from "../../components/StarRating/StarRating.jsx";
 import Tags from "../../components/Tags/Tags.jsx";
 import Price from "../../components/Price/Price.jsx";
+import {useCart} from "../../hooks/useCart.jsx";
 
 const FoodPage = () => {
     const [food, setFood] = useState({});
     const { foodId } = useParams();
+    const { addToCart } = useCart();
+    const navigate = useNavigate();
+
+    const handleAddToCart = () => {
+        addToCart(food);
+        navigate('/cart');
+    };
 
     useEffect(() => {
         getById(foodId).then(setFood)
     }, [foodId]);
-    console.log(food);
+
     return (
         <>
             {food && (<div className={classes.container}>
@@ -56,7 +64,10 @@ const FoodPage = () => {
                             <Price price={food.price} />
                         </div>
 
-                        <button className={classes.button}>Add to cart</button>
+                        <button
+                            className={classes.button}
+                            onClick={handleAddToCart}
+                        >Add to cart</button>
                     </div>
                 </div>
             )}
