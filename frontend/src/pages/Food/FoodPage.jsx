@@ -6,6 +6,7 @@ import StarRating from "../../components/StarRating/StarRating.jsx";
 import Tags from "../../components/Tags/Tags.jsx";
 import Price from "../../components/Price/Price.jsx";
 import {useCart} from "../../hooks/useCart.jsx";
+import NotFound from "../../components/NotFound/NotFound.jsx";
 
 const FoodPage = () => {
     const [food, setFood] = useState({});
@@ -24,7 +25,10 @@ const FoodPage = () => {
 
     return (
         <>
-            {food && (<div className={classes.container}>
+            {!food? (
+                <NotFound message={"Food Not Found!!"} linkText={"Back to Homepage"}/>
+                ) : (
+                    <div className={classes.container}>
                     <img
                         className={classes.image}
                         src={food.imageUrl}

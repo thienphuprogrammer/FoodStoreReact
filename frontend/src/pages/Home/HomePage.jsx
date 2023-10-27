@@ -4,6 +4,7 @@ import {getAll, getAllByTag, getAllTags, search} from "../../services/foodServic
 import {useParams} from "react-router-dom";
 import Search from "../../components/Search/Search.jsx";
 import Tags from "../../components/Tags/Tags.jsx";
+import NotFound from "../../components/NotFound/NotFound.jsx";
 
 const initialState = { foods: [], tags: [] };
 
@@ -39,6 +40,7 @@ const HomePage = () => {
         <>
             <Search />
             <Tags tags={tags}/>
+            {foods.length === 0 && <NotFound linkText={"Reset search..."}/>}
             <Thumbnails foods={foods} />
         </>
     );

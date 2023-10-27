@@ -8,7 +8,7 @@ export const sample_foods = [
         origins: ['Italian', 'American'],
         stars: 4,
         imageUrl: '/foods/food-1.jpg',
-        tags: ['pasta', 'pizza', 'italian'],
+        tags: ['Pasta', 'Pizza', 'italian'],
     },
     {
         id: '2',
