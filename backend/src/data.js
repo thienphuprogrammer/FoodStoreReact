@@ -99,3 +99,23 @@ export const sample_tags = [
     {name: 'Breakfast', count: 1},
     {name: 'Drinks', count: 1},
 ]
+
+
+export const sample_user = [
+    {
+        id: '1',
+        name: 'John Doe',
+        email: 'thienphu@gmail.com',
+        password: '123456',
+        address: '123 Nguyen Van Linh, Da Nang',
+        isAdmin: false
+    },
+    {
+        id: '2',
+        name: 'John Doe',
+        email: 'thienphu1@gmail.com',
+        password: '123456',
+        address: '123 Nguyen Van Linh, Da Nang',
+        isAdmin: true
+    }
+]
