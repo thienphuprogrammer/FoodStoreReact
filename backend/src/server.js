@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors({
     credentials: true,
-    origin: ('http://127.0.0.1:5173/')
+    origin: ('http://172.25.254.238:5173/')
 }));
 
 app.use('/api/foods', foodRouter);
