@@ -13,7 +13,6 @@ router.post(
     '/create',
     handler(async (req, res) => {
         const order = req.body;
-        console.log(order);
         if (order.items.length <= 0) {
             res.status(BAD_REQUEST).send({message: "No items in order"})
         }
@@ -36,7 +35,6 @@ router.put(
     '/pay',
     handler(async (req, res) => {
         const {paymentId} = req.body;
-        console.log(paymentId);
         const order = await getNewOrderForCurrentUser(req);
         if (!order) {
             res.status(BAD_REQUEST).send({message: "No new order for current user"})
