@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import classes from "./LoginPage.module.css";
+import classes from "./loginPage.module.css";
 import {useForm} from "react-hook-form";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {useAuth} from "../../hooks/useAuth.jsx";
