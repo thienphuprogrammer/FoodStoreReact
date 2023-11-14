@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Loading.module.css";
+import classes from "./loading.module.css";
 import {useLoading} from "../../hooks/useLoading.jsx";
 
 export default function Loading() {
