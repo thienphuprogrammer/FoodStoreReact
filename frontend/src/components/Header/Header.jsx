@@ -2,18 +2,15 @@ import React from "react";
 import classes from "./header.module.css";
 import { Link } from "react-router-dom";
 import {useCart} from "../../hooks/useCart.jsx";
+import {useAuth} from "../../hooks/useAuth.jsx";
 
 const Header = () => {
-    const user = {
-        name: "John"
-    };
-
+    const {user, logout} = useAuth();
     const { cart } = useCart();
 
     return (
         <header className={classes.header}>
             <div className={classes.container}>
-                <h1 className={classes.title}>Welcome {user.name}</h1>
                 <Link to="/" className={classes.logo}>E-Commerce</Link>
                 <nav className={classes.nav}>
                     <ul>
@@ -24,7 +21,7 @@ const Header = () => {
                                     <div className={classes.menu}>
                                         <Link to="/profile" className={classes.menu_item}>Profile</Link>
                                         <Link to="/orders" className={classes.menu_item}>Orders</Link>
-                                        <a onClick={() => {}} className={classes.menu_item}>Logout</a>
+                                        <a onClick={logout} className={classes.menu_item}>Logout</a>
                                     </div>
                                 </li> ) : (
                                 <Link to="/login" className={classes.menu}>Login</Link>

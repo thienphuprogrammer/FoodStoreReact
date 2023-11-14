@@ -13,7 +13,17 @@ export const AuthProvider = ({children}) => {
             setUser(user);
             toast.success('Login successfully');
         } catch (error) {
-            toast.error(error.response.data.message);
+            toast.error(error.response.data);
+        }
+    }
+
+    const register = async (registerData) => {
+        try {
+            const user = await userService.register(registerData);
+            setUser(user);
+            toast.success('Register successfully');
+        } catch (error) {
+            toast.error(error.response.data);
         }
     }
 
@@ -21,6 +31,24 @@ export const AuthProvider = ({children}) => {
         userService.logout();
         setUser(null);
         toast.success('Logout successfully');
+    }
+
+    const updateProfile = async (updateData) => {
+        const updatedUser = await userService.updateProfile(updateData);
+        toast.success('Update profile successfully');
+        if (updatedUser) {
+            setUser(updatedUser);
+        }
+    }
+
+    const changePassword = async (passwords) => {
+        try {
+            await userService.changePassword(passwords);
+            logout();
+            toast.success('Change password successfully');
+        } catch (error) {
+            toast.error(error.response.data);
+        }
     }
 
     useEffect(() => {
@@ -31,7 +59,10 @@ export const AuthProvider = ({children}) => {
     const value = {
         user,
         login,
-        logout
+        logout,
+        register,
+        updateProfile,
+        changePassword,
     }
 
     return (

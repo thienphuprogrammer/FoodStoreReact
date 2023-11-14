@@ -106,7 +106,7 @@ export const sample_user = [
         id: '1',
         name: 'John Doe',
         email: 'thienphu@gmail.com',
-        password: '123456',
+        password: '12345678',
         address: '123 Nguyen Van Linh, Da Nang',
         isAdmin: false
     },
@@ -114,7 +114,7 @@ export const sample_user = [
         id: '2',
         name: 'John Doe',
         email: 'thienphu1@gmail.com',
-        password: '123456',
+        password: '12345678',
         address: '123 Nguyen Van Linh, Da Nang',
         isAdmin: true
     }

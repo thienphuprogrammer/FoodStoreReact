@@ -1,0 +1,15 @@
+{
+  "name": "foodstorereact",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build",
+    "postbuild": "cp -r frontend/dist backend/src/public && rm -r frontend/dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "description": ""
+}
