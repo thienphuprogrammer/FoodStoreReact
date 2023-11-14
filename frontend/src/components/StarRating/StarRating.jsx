@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./StarRating.module.css";
+import classes from "./starRating.module.css";
 const StarRating = ({ stars, size }) => {
     const styles = {
         fontSize: size + "px",

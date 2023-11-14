@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './OrderItemsList.module.css';
+import classes from './orderItemsList.module.css';
 import {Link} from "react-router-dom";
 import Price from "../Price/Price.jsx";
 
